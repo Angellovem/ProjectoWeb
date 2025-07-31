@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+}
+
+.page-header {
+    text-align: center;
+    color: #3399ff;
+}
+
+.team-data {
+    width: 800px;
+    margin-left: 150px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    border: 2px solid #3399ff;
+}
+
+.team-data h2 {
+    margin-bottom: 20px;
+    color: #3399ff;
+    font-size: 2rem;
+    border-bottom: 1px solid #3399ff;
+    padding-bottom: 8px;
+}
+
+.team-member {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #3399ff;
+}
+
+
+.member-name {
+    color: #3399ff;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.member-role, .member-languages, .member-profile {
+    margin-left: 50px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.toggle-info {
+    background: none;
+    border: none;
+    color: #3399ff;
+    cursor: pointer;
+}
+
+.toggle-info .arrow {
+    font-size: 1.5rem;
+}
+
+.member-info {
+    display: none;
+}
+
+.member-info.show {
+    display: block;
+}
