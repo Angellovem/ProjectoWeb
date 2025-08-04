@@ -7,11 +7,33 @@ body {
 }
 
 .page-header {
-    text-align: center;
-    color: #3399ff;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background: #3399ff;
+    top: 0;
+    left: 0;
+}
+
+.page-header h3.header-title {
+    font: 25;
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: left;
+    text-indent: 15px;
+    text-decoration-line: underline;
+    text-decoration-color: #339;
+    margin: 0;
+}
+
+.page-header p.menu {
+    text-align: right;
+    margin-right: 20px;
+    font: 12 arial;
 }
 
 .team-data {
+    margin-top: 120px;
     width: 800px;
     margin-left: 150px;
     background: #fff;
@@ -26,6 +48,13 @@ body {
     font-size: 2rem;
     border-bottom: 1px solid #3399ff;
     padding-bottom: 8px;
+}
+
+.team-data h1 {
+    text-align: center;
+    color: #3399ff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .team-member {

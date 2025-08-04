@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    overflow-y: auto;
+    
+}
+
+.page-header {
+    background: #3399ff;
+    position:fixed;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+}
+
+
+
+.page-header h1 {
+    margin-top: 50px;
+    font-size: 40px;
+    text-align: left;
+    text-indent: 15px;
+    text-decoration-line: underline;
+    text-decoration-color: #339;
+    margin: 0;
+}
+
+.page-header p.Menu {
+    text-align: right;
+    margin-right:  20px;
+}
+
+.project-description {
+    margin-top: 90px;
+    margin-left: 50px;
+    width: 1100px;
+    background: #fff;
+    padding: 10px;
+}
+
+.project-description h2 {
+    color: #3399ff;
+    font-size: 2rem;
+    border-bottom: 1px solid #3399ff;
+    padding-bottom: 8px;
+}
+
+.development {
+    margin-top: 20px;
+    border: 2px solid #3399ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.deployment {
+    margin-top: 20px;
+    border: 2px solid #3399ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.score {
+    margin-top: 20px;
+    border: 2px solid #3399ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.toggle-info {
+    background: none;
+    border: none;
+    color: #3399ff;
+    cursor: pointer;
+}
+
+.toggle-info .arrow {
+    font-size: 1.5rem;
+}
+
+.development-info.show {
+    display: block;
+}
+
+.development-info {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.deployment-info.show {
+    display: block;
+}
+
+.deployment-info {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+
+.score-loop {
+    background: none;
+    border: none;
+    color: #3399ff;
+    font-size: 1rem;
+}
+
+
+.score-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.score-details.show {
+    display: block;
+}
+
+.score-des {
+    display: none;
+}
+
+.score-des.show {
+    display: block;
+}

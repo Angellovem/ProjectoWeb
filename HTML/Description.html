@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>
+            Descripci&oacute;n del proyecto
+        </title>
+        <link rel="stylesheet" href="../CSS/DescriptionStyles.css">
+    </head>
+    <body>
+        <header class="page-header">
+            <h1>Descripci&oacute;n del proyecto</h1>
+            <p class="Menu">
+                <a href="../HTML/Presentation.html">Conoce a nuestro equipo!</a>
+            </p>
+        </header>
+        <main class = "project-description">
+            <h2>Descripci&oacute;n</h2>
+            <p>
+                Para el desarrollo de esta aplicación, se deben considerar dos perfiles de usuarios principales: el “Usuario Arrendatario” y el “Usuario Arrendado”. </p>
+
+<p>El “Usuario Arrendatario” tendrá la capacidad de realizar una variedad de acciones relacionadas con la gestión de propiedades y la interacción con otros usuarios. Entre estas acciones se incluyen la creación, edición, eliminación y actualización de propiedades disponibles para arrendamiento. Además, este usuario será responsable de revisar y responder a todas las solicitudes de arrendamiento recibidas, teniendo la opción de aceptarlas o cancelarlas según corresponda. También será su responsabilidad verificar los pagos realizados por los arrendadores y proporcionar calificaciones y comentarios sobre la experiencia de arrendamiento.</p>
+
+<p>Por otro lado, el “Usuario Arrendador” tendrá un conjunto diferente de funcionalidades diseñadas para facilitar el proceso de búsqueda y arrendamiento de propiedades. Este usuario podrá buscar fincas disponibles filtradas por ubicación geográfica, así como solicitar el arrendamiento de una finca específica. Una vez que se apruebe la solicitud, el arrendador podrá realizar el pago correspondiente del arriendo y, posteriormente, calificar tanto la finca arrendada como al arrendatario.</p>
+
+<p>La implementación de esta aplicación requerirá la integración de un sistema de autenticación y autorización robusto para gestionar los diferentes roles y permisos de los usuarios. Además, se necesitarán interfaces de usuario intuitivas y funcionales que permitan a los usuarios interactuar de manera efectiva con la plataforma.</p>
+
+<p>El flujo de trabajo para el “Usuario Arrendatario” implicará la gestión activa de las propiedades disponibles, la revisión y respuesta a las solicitudes de arrendamiento, así como el seguimiento de los pagos realizados y la provisión de retroalimentación sobre las experiencias de arrendamiento. Por otro lado, el “Usuario Arrendador” estará enfocado en la búsqueda y arrendamiento de propiedades, así como en la gestión de los pagos y la calificación de la experiencia general.</p>
+
+<p>En resumen, el desarrollo de esta aplicación requerirá una planificación detallada y un enfoque centrado en el usuario para garantizar una experiencia fluida y satisfactoria para todos los usuarios involucrados. La implementación exitosa de esta plataforma requerirá una cuidadosa consideración de las necesidades y expectativas tanto de los arrendatarios como de los arrendadores.</p>
+
+            </p>
+            <div class = "development">
+                <button class="toggle-info">
+                    <span class="arrow">&#9654;</span>
+                    <span class="description-title">Desarrollo</span>
+                </button>
+                <div class = "development-info">
+                    <p class="development-text">
+                        El desarrollo de esta aplicación se llevará a cabo utilizando tecnologías web modernas, incluyendo HTML, CSS y JavaScript para el frontend, y Node.js con Express para el backend. La base de datos será gestionada mediante MongoDB, lo que permitirá una gestión eficiente de los datos de los usuarios y las propiedades.
+                    </p>
+                </div>
+            </div>
+            <div class = "deployment">
+                <button class="toggle-info">
+                    <span class="arrow">&#9654;</span>
+                    <span class="description-title">Despliegue</span>
+                </button>
+                <div class = "deployment-info">
+                    <p class="deployment-text">
+                        Todas las entregas se deberán realizar en la máquina virtual entregada por la Universidad y se deberá haber realizado previamente el despliegue en un Kubernetes instalado en la misma.
+                    </p>
+                </div>
+            </div>
+            <div class= "score">
+                <p class = "score-loop">
+                    Fechas de entrega y calificación:
+                </p>
+                <div class = "score-info">
+                    <button class="toggle-info">
+                        <span class="arrow">&#9654;</span>
+                        <span class="score-title">Entrega #1:  JPA y controladores</span>
+                    </button>
+                    <div class="score-details">
+                        <p class ="score-text">
+                            70% Conexión a la base de datos	
+                        </p>
+                        <p class = "score-JPA">
+                            JPA:
+                        </p>
+                        <p class = "score-description">
+                            1. (60%). Mapeo del modelo al proyecto JPA en Springboot,con los respectivos entities, servicios, dtos, repositorios, dtos y contorloadores. Ud deberá tener todos los servicios en POSTMAN para poder realizar la entrega.
+                        </p>
+                        <p class = "score-description">
+                            2. (10%). Pruebas unitarias del código, incluyendo reporte de sonaqube (cobertura mínimo del 80% del código, no se aceptarhallazgos alto, medios deben tener sustentación), en la wiki ud deberá subir la documentación de los casos de pruebas en los que mínimo de información es: identificador de la prueba, título, descripción,diseñada por, ejecutada por, dependencias de las pruebas, resultados esperados, resultados reales y si cumplió o no cumplió. Notas deben ser por lo menos 5 pruebas por clase y se deben documentar si cumplio no cumplió.
+                        </p>
+                        <p class = "score-text">
+                            20% Documentación
+                        </p>
+                        <p class = "score-description">
+                            1. (10%). Modelo entidad relación, en la wiki de su grupo. Ud deberá subir el modelo y el diccionario de datos y debemos tener accesos a las actas de las sesiones.
+                        </p>
+                        <p class = "score-description">
+                            2. (10%). Debe realizar la documentación mínimo los servicios CRUD (Create, Retrieve, Update and Delete) de cada una de las clases que tiene; en la wiki debe tener los contratos funcionales de cada uno de los servicios y en debe traer en postman una consulta por cada servicio expuesto.
+                        </p>
+                        <p class = "score-text">
+                            10% Presentación
+                        </p>
+                        <p class = "score-description">
+                            1. (10%). Se debe realizar una presentación resumiendo el trabajo, deben tener la grafica de la asistencia de cada uno de ustedes a los daily, resultado el líder debe realizar la presentación, los resultados de las pruebas unitarias, los resultados de las pruebas de carga, los resultados de codigo de SONARQUBE y lo que ud vea relevante para contar. La presentación debe durar 15 mins mas 5 minutos de preguntas.
+                        </p>
+                    </div>
+                </div>
+                <div class = "score-info">
+                    <button class="toggle-info">
+                        <span class="arrow">&#9654;</span>
+                        <span class="score-title">Entrega 2: Conexión JPA – Angular</span>
+                    </button>
+                    <div class="score-details">
+                        <p class ="score-text">
+                            30% Componentes
+                        </p>
+                        <p class = "score-description">
+                            1. Deben mostrar componentes transversales, por lo menos 2.
+                        </p>
+                        <p class = "score-description">
+                            2. Deben mostrar componentes principales de cada una de las páginas que tienen para cumplir con todas las historias de usuarios conectadas con el backend.
+                        </p>
+                        <p class = "score-text">
+                            30% Routes
+                        </p>
+                        <p class = "score-description">
+                            1. Se debe mostrar el mockup y mostrar cada una de las páginas que estén en el mismo.
+                        </p>
+                        <p class = "score-text">
+                            30% Comunicación
+                        </p>
+                        <p class = "score-description">
+                            1. Mostrar los modelos.
+                        </p>
+                        <p class = "score-description">
+                            2. Mostrar los servicios.
+                        </p>
+                        <p class = "score-text">
+                            30% Comunicación backend
+                        </p>
+                        <p class = "score-description">
+                            1. Verificación que desde la interfaz se realicen las historias de usuario.
+                        </p>
+                    </div>
+                </div>
+                <div class = "score-info">
+                    <button class="toggle-info">
+                        <span class="arrow">&#9654;</span>
+                        <span class="score-title">Entrega 3: Pruebas carga, frontend y seguridad – Código limpio</span>
+                    </button>
+                    <div class="score-details">
+                        <p class ="score-text">
+                            15%	Pruebas de carga
+                        </p>
+                        <p class = "score-text">
+                            30%	JWT
+                        </p>
+                        <p class = "score-text">
+                            15%	Pruebas automatizadas de interfaz gráfica.
+                        </p>
+                        <p class = "score-text">
+                            15%	Filtros para manejo de errores.
+                        </p>
+                        <p class = "score-text">
+                            25%	Herramienta con el 100% de la funcionalidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="../JAVASCRIPT/DescriptionJS.js"></script>
+    </body>
+    <footer class ="footer-bar">
+        <a href="https://instagram.com/leguizamo_cristian1" style="color: #fff; text-decoration: underline;">Conoce a Cristian</a>
+    </footer>
+</html>
