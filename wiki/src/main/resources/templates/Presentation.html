@@ -1,79 +1,35 @@
-<html>
-    <head>
-        <title>
-            Presentaci&oacute;n del equipo
-        </title>
-        <!-- <link rel="stylesheet" href="../CSS/PresentationStyles.css"> -->
-        <link rel="stylesheet" href="/PresentationStyles.css">
-    </head>
-    <body> 
-        <header class="page-header">
-            <h3 class="header-title">
-                Presentaci&oacute;n del equipo
-            </h3>
-            <p class =  "menu">
-                <a href = "/">Descripci&oacute;n del proyecto</a> 
-            </p>
-        </header>
-        <main class="team-data">
-            <h1>Equipo #1</h1>
-            <h2>Integrantes</h2>
-            <div class="team-member">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="member-name">Cristian</span>
-                </button>
-                <div class="member-info">
-                    <p class="member-role">Desarrollador Frontend</p>
-                    <p class="member-languages">Lenguajes: HTML, CSS, JavaScript</p>
-                    <p class="member-profile">Perf&iacute;l: </p>
-                </div>
-            </div>
-            <div class="team-member">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="member-name">Angel</span>
-                </button>
-                <div class="member-info">
-                    <p class="member-role">Rol: Desarrollador Frontend</p>
-                    <p class="member-languages">Lenguajes: HTML, CSS, JavaScript</p>
-                    <p class="member-profile">Perf&iacute;l: </p>
-                </div>
-            </div>
-            <div class="team-member">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="member-name">Daniel</span>
-                </button>
-                <div class="member-info">
-                    <p class="member-role">Rol: Arquitecto de Software</p>
-                    <p class="member-languages">Lenguajes: Kotlin, Java, C++, Python, SQL</p>
-                    <p class="member-profile">Perf&iacute;l: Me gusta desempeñarme en el rol de la arquitectura y el backend, tengo solidos conocimientos en bases de datos y en diseñar sistemas </p>
-                </div>
-            </div>
-            <div class="team-member">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="member-name">Miguel</span>
-                </button>
-                <div class="member-info">
-                    <p class="member-role">Rol: Desarrollador Frontend</p>
-                    <p class="member-languages">Lenguajes: HTML, CSS, JavaScript</p>
-                    <p class="member-profile">Perf&iacute;l: </p>
-                </div>
-            </div>
-            <div class="team-member">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="member-name">Nicolas</span>
-                </button>
-                <div class="member-info">
-                    <p class="member-role">Rol: Desarrollador Frontend</p>
-                    <p class="member-languages">Lenguajes: HTML, CSS, JavaScript</p>
-                    <p class="member-profile">Perf&iacute;l: </p>
-                </div>
-            </div>
-        </main>
-        <script src="/PresentationJS.js"></script>
-    </body>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación del equipo</title>
+    <link rel="stylesheet" th:href="@{/PresentationStyles.css}">
+</head>
+<body>
+<header class="page-header">
+    <h3 class="header-title">
+        Presentación del equipo
+    </h3>
+    <p class="menu">
+        <a th:href="@{/description}">Descripción del proyecto</a>
+    </p>
+</header>
+<main class="team-data">
+    <h1>Equipo #1</h1>
+    <h2>Integrantes</h2>
+
+    <div class="team-member" th:each="miembro : ${teamMembers}">
+        <button class="toggle-info">
+            <span class="arrow">&#9654;</span>
+            <span class="member-name" th:text="${miembro.name}">Nombre Miembro</span>
+        </button>
+        <div class="member-info">
+            <p class="member-role" th:text="${miembro.role}">Rol</p>
+            <p class="member-languages" th:text="${miembro.languages}">Lenguajes</p>
+            <p class="member-profile" th:text="${miembro.profile}">Perfil</p>
+        </div>
+    </div>
+    </main>
+
+<script th:src="@{/PresentationJS.js}"></script>
+</body>
 </html>

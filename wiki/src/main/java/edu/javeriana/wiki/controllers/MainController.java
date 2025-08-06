@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
-    @RequestMapping("/")
+    @RequestMapping("/description")
     public String description() {
         return "Description";
     }
