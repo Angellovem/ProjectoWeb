@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contáctenos</title>
+    <!--Estilos base del form lol-->
+    <link rel="stylesheet" href="/DescriptionStyles.css">
+    <!--Estilos especificos de nuestro form-->
+    <link rel="stylesheet" href="/ContactStyles.css">
+</head>
+<body>
+<header class="page-header">
+    <h1>Contáctenos</h1>
+    <p class="Menu">
+        <a href="/presentation">Conoce a nuestro equipo!</a>
+        &nbsp;
+        <a href="/description">Descripción</a>
+    </p>
+</header>
+
+<main class="project-description">
+    <h2>Escríbenos</h2>
+
+    <div th:if="${success}" class="success" th:text="${success}"></div>
+
+    <div class="form-card">
+        <form th:action="@{/contacto}" th:object="${formulario}" method="post" id="contactForm" novalidate>
+            <div class="field">
+                <label for="nombres">Nombres *</label>
+                <input id="nombres" type="text" th:field="*{nombres}" maxlength="100" required>
+                <div class="counter"><span id="nombresCount">0</span>/100</div>
+                <div class="error" th:if="${#fields.hasErrors('nombres')}" th:errors="*{nombres}"></div>
+                <div class="error" id="nombresErr"></div>
+            </div>
+
+            <div class="field">
+                <label for="apellidos">Apellidos *</label>
+                <input id="apellidos" type="text" th:field="*{apellidos}" maxlength="100" required>
+                <div class="counter"><span id="apellidosCount">0</span>/100</div>
+                <div class="error" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
+                <div class="error" id="apellidosErr"></div>
+            </div>
+
+            <div class="field">
+                <label for="correo">Correo (MAYÚSCULAS, sin espacios) *</label>
+                <input id="correo" type="text" th:field="*{correo}" maxlength="100" required
+                       pattern="^[A-Z0-9._-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$" inputmode="email" autocomplete="email">
+                <div class="counter"><span id="correoCount">0</span>/100</div>
+                <div class="error" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
+                <div class="error" id="correoErr"></div>
+            </div>
+
+            <div class="field">
+                <label for="semestre">Semestre (0–16) *</label>
+                <input id="semestre" type="number" th:field="*{semestre}" min="0" max="16" required>
+                <div class="error" th:if="${#fields.hasErrors('semestre')}" th:errors="*{semestre}"></div>
+                <div class="error" id="semestreErr"></div>
+            </div>
+
+            <div class="field">
+                <label for="descripcion">Descripción *</label>
+                <textarea id="descripcion" th:field="*{descripcion}" rows="4" maxlength="500" required></textarea>
+                <div class="counter"><span id="descCount">0</span>/500</div>
+                <div class="error" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
+                <div class="error" id="descripcionErr"></div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn">Enviar</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="/ContactJS.js"></script>
+</body>
+</html>
