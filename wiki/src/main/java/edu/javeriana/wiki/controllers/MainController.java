@@ -1,17 +1,18 @@
 package edu.javeriana.wiki.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-    @RequestMapping("/description")
-    public String description() {
-        return "Description";
+
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/description";
     }
 
-    @RequestMapping("/presentation")
-    public String presentation() {
-        return "Presentation";
+    @GetMapping("/description")
+    public String description() {
+        return "Description";
     }
 }
