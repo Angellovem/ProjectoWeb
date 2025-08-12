@@ -14,7 +14,7 @@ public class AdminsController {
         List<TeamMember> teamMembers = new ArrayList<>();
         teamMembers.add(new TeamMember("Cristian", "CSO", "Java, Python", "Perfil: "));
         teamMembers.add(new TeamMember("Angel", "CTO", "Java, Python", "Perfil:"));
-        teamMembers.add(new TeamMember("Daniel", "CFO", "Java, Python", "Perfil:"));
+        teamMembers.add(new TeamMember("Daniel", "Arquitecto de Software", "C++, Kotlin, Java, Python", "Perfil: Me gusta hacer diagramas de clases (Soy un psicopata)"));
         teamMembers.add(new TeamMember("Nicolas", "CIO", "Java, Python", "Perfil:"));
         teamMembers.add(new TeamMember("Miguel", "CPO", "Java, Python", "Perfil:"));
         model.addAttribute("teamMembers", teamMembers);
