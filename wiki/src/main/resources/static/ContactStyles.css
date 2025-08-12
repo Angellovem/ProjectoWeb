@@ -1,0 +1,82 @@
+.form-card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.field {
+    margin-bottom: .75rem;
+}
+
+.field label {
+    display: block;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: .25rem;
+    font-size: .9rem;
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+    padding: .6rem .7rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: .9rem;
+    outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #2563eb;
+}
+
+.invalid {
+    border-color: #ef4444 !important;
+    background: #fff7f7;
+}
+
+.error {
+    color: #ef4444;
+    font-size: .75rem;
+    margin-top: .25rem;
+}
+
+.counter {
+    font-size: .75rem;
+    color: #666;
+    text-align: right;
+    margin-top: .25rem;
+}
+
+.success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    padding: .75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.actions {
+    text-align: right;
+    margin-top: .5rem;
+}
+
+.btn {
+    background: white;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    padding: .55rem .9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .15s ease;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #2563eb;
+    color: white;
+}

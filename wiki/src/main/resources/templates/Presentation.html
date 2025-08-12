@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación del equipo</title>
+    <link rel="stylesheet" th:href="@{/PresentationStyles.css}">
+</head>
+<body>
+<header class="page-header">
+    <h3 class="header-title">
+        Presentación del equipo
+    </h3>
+    <p class="menu">
+        <a th:href="@{/description}">Descripción del proyecto</a>
+        <a href="/contacto">Contáctenos</a>
+    </p>
+</header>
+<main class="team-data">
+    <h1>Equipo #1</h1>
+    <h2>Integrantes</h2>
+
+    <div class="team-member" th:each="miembro : ${teamMembers}">
+        <button class="toggle-info">
+            <span class="arrow">&#9654;</span>
+            <span class="member-name" th:text="${miembro.name}">Nombre Miembro</span>
+        </button>
+        <div class="member-info">
+            <p class="member-role" th:text="${miembro.role}">Rol</p>
+            <p class="member-languages" th:text="${miembro.languages}">Lenguajes</p>
+            <p class="member-profile" th:text="${miembro.profile}">Perfil</p>
+        </div>
+    </div>
+    </main>
+
+<script th:src="@{/PresentationJS.js}"></script>
+</body>
+</html>
