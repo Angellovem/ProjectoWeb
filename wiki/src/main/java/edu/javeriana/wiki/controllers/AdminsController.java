@@ -15,7 +15,7 @@ public class AdminsController {
         teamMembers.add(new TeamMember("Cristian", "CSO", "Java, Python", "Perfil: ","/images/Cristian.png"));
         teamMembers.add(new TeamMember("Angel", "CTO", "Java, Python", "Perfil:","imageCristian"));
         teamMembers.add(new TeamMember("Daniel", "Arquitecto de Software", "C++, Kotlin, Java, Python", "Perfil: Me gusta hacer diagramas de clases (Soy un psicopata)","imageCristian"));
-        teamMembers.add(new TeamMember("Nicolas", "CIO", "Java, Python", "Perfil:","imageCristian"));
+        teamMembers.add(new TeamMember("Nicolas", "CIO", "C++, Kotlin, Java, Python, HTML, CSS, JavaScript", "Perfil: Me gusta el manejo y procesamiento de datos por razones aun desconocidas","/images/nicolas.jpg"));
         teamMembers.add(new TeamMember("Miguel", "CPO", "Java, Python", "Perfil:","imageCristian"));
         model.addAttribute("teamMembers", teamMembers);
         return "Presentation";
