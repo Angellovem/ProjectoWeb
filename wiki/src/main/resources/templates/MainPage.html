@@ -1,43 +1,111 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Página principal - Wiki</title>
-    <link rel="stylesheet" href="MainPageStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrienda tu Finca - Plataforma de Arrendamiento</title>
+    <link rel="stylesheet" href="/shared-styles.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-    <header class="main-header">
-        <div class="main-nav">
-            <img src="images/Logo.png" alt="logo"></img>
-            <a th:href="@{/description}">Descripción  del proyecto</a>
-            <a th:href="@{/presentation}">Conoce a nuestro equipo</a>
-            <a th:href="@{/contacto}">Contáctenos</a>
+    <!-- Header -->
+    <header class="page-header">
+        <div class="header-container">
+            <a th:href="@{/MainPage}">
+                <img src="images/Logo.png" alt="Arrienda tu Finca" class="logo-image">
+            </a>
+            <nav class="nav-menu">
+                <a th:href="@{/description}" class="nav-link">Descripción</a>
+                <a th:href="@{/presentation}" class="nav-link">Nuestro Equipo</a>
+                <a th:href="@{/contacto}" class="nav-link">Contáctanos</a>
+            </nav>
         </div>
     </header>
-    <main class="container">
-        <div class="banner">
-            <h1>WIKI - Grupo: Los Pablo lovers</h1>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in-up">
+        <div class="main-container">
+            <h1>Arrienda tu Finca</h1>
+            <p>Conectamos propietarios con arrendatarios de manera segura y eficiente. Encuentra tu finca ideal o renta la tuya con confianza.</p>
+            <div class="hero-actions">
+                <a th:href="@{/description}" class="btn btn-primary btn-large">
+                    <i class="ph-bold ph-info"></i>
+                    Conoce más
+                </a>
+                <a th:href="@{/contacto}" class="btn btn-secondary btn-large">
+                    <i class="ph-bold ph-chats"></i>
+                    Contáctanos
+                </a>
+            </div>
         </div>
-        <div class="summary">
-            <p>
-                En esta Wiki encontrarás todo lo relacionado al desarrollo del proyecto Arrienda tu Finca
-            </p>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="main-container fade-in-up">
+        <div class="text-center mb-xl">
+            <h2>¿Por qué elegir nuestra plataforma?</h2>
+            <p>Ofrecemos una experiencia completa y segura para el arrendamiento de fincas</p>
         </div>
-        <div class="cards-container">
-            <div class="card card-description">
-                <i class="ph-bold ph-file-text"></i>
-                <a th:href="@{/description}">Descripción del proyecto</a>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <i class="ph-bold ph-shield-check card-icon"></i>
+                <h3>Seguridad Garantizada</h3>
+                <p>Sistema de verificación y pagos seguros para proteger tanto a propietarios como arrendatarios.</p>
             </div>
             
-            <div class="card card-team">
-                <i class="ph-bold ph-users-three"></i>
-                <a th:href="@{/presentation}">Conoce a nuestro equipo</a>
+            <div class="card">
+                <i class="ph-bold ph-map-pin card-icon"></i>
+                <h3>Búsqueda Inteligente</h3>
+                <p>Encuentra fincas por ubicación, características y disponibilidad con filtros avanzados.</p>
             </div>
-            <div class="card card-contact">
-                <i class="ph-bold ph-chats"></i>
-                <a th:href="@{/contacto}">Contáctenos</a>
+            
+            <div class="card">
+                <i class="ph-bold ph-star card-icon"></i>
+                <h3>Sistema de Calificaciones</h3>
+                <p>Evalúa y califica experiencias para mantener la calidad de la comunidad.</p>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Features Section -->
+    <section class="main-container fade-in-up">
+        <div class="text-center mb-xl">
+            <h2>Funcionalidades Principales</h2>
+            <p>Todo lo que necesitas para una experiencia de arrendamiento exitosa</p>
+        </div>
+        
+        <div class="cards-grid">
+            <a th:href="@{/description}" class="card">
+                <i class="ph-bold ph-file-text card-icon"></i>
+                <h3>Descripción del Proyecto</h3>
+                <p>Conoce en detalle cómo funciona nuestra plataforma y qué beneficios ofrece.</p>
+            </a>
+            
+            <a th:href="@{/presentation}" class="card">
+                <i class="ph-bold ph-users-three card-icon"></i>
+                <h3>Nuestro Equipo</h3>
+                <p>Descubre quiénes somos y cómo trabajamos para crear la mejor experiencia.</p>
+            </a>
+            
+            <a th:href="@{/contacto}" class="card">
+                <i class="ph-bold ph-chats card-icon"></i>
+                <h3>Contáctanos</h3>
+                <p>¿Tienes preguntas? Estamos aquí para ayudarte. Envíanos un mensaje.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="main-container fade-in-up">
+        <div class="text-center">
+            <h2>¿Listo para comenzar?</h2>
+            <p>Únete a nuestra plataforma y descubre una nueva forma de arrendar fincas</p>
+            <a th:href="@{/contacto}" class="btn btn-primary btn-large">
+                <i class="ph-bold ph-arrow-right"></i>
+                Empezar ahora
+            </a>
+        </div>
+    </section>
 </body>
 </html>

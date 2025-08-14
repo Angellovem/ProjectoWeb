@@ -1,161 +1,271 @@
-<html>
-    <head>
-        <title>
-            Descripci&oacute;n del proyecto
-        </title>
-        <link rel="stylesheet" href="/DescriptionStyles.css">
-    </head>
-    <body>
-        <header class="page-header">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción del Proyecto - Arrienda tu Finca</title>
+    <link rel="stylesheet" href="/shared-styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header">
+        <div class="header-container">
             <a th:href="@{/MainPage}">
-                <img src="images/Logo.png" alt="logo" class="logo-image">
+                <img src="images/Logo.png" alt="Arrienda tu Finca" class="logo-image">
             </a>
-            <p class="Menu">
-                <a href="/presentation">Conoce a nuestro equipo!</a>
-                <a href="/contacto">Contáctenos</a>
-            </p>
-        </header>
-        <main class = "project-description">
-            <h2>Descripci&oacute;n</h2>
-            <p>
-                Para el desarrollo de esta aplicación, se deben considerar dos perfiles de usuarios principales: el “Usuario Arrendatario” y el “Usuario Arrendado”. </p>
+            <nav class="nav-menu">
+                <a th:href="@{/description}" class="nav-link active">Descripción</a>
+                <a th:href="@{/presentation}" class="nav-link">Nuestro Equipo</a>
+                <a th:href="@{/contacto}" class="nav-link">Contáctanos</a>
+            </nav>
+        </div>
+    </header>
 
-<p>El “Usuario Arrendatario” tendrá la capacidad de realizar una variedad de acciones relacionadas con la gestión de propiedades y la interacción con otros usuarios. Entre estas acciones se incluyen la creación, edición, eliminación y actualización de propiedades disponibles para arrendamiento. Además, este usuario será responsable de revisar y responder a todas las solicitudes de arrendamiento recibidas, teniendo la opción de aceptarlas o cancelarlas según corresponda. También será su responsabilidad verificar los pagos realizados por los arrendadores y proporcionar calificaciones y comentarios sobre la experiencia de arrendamiento.</p>
+    <!-- Hero Section -->
+    <section class="hero fade-in-up">
+        <div class="main-container">
+            <h1>Descripción del Proyecto</h1>
+            <p>Conoce en detalle cómo funciona nuestra plataforma de arrendamiento de fincas y qué beneficios ofrece para propietarios y arrendatarios.</p>
+        </div>
+    </section>
 
-<p>Por otro lado, el “Usuario Arrendador” tendrá un conjunto diferente de funcionalidades diseñadas para facilitar el proceso de búsqueda y arrendamiento de propiedades. Este usuario podrá buscar fincas disponibles filtradas por ubicación geográfica, así como solicitar el arrendamiento de una finca específica. Una vez que se apruebe la solicitud, el arrendador podrá realizar el pago correspondiente del arriendo y, posteriormente, calificar tanto la finca arrendada como al arrendatario.</p>
-
-<p>La implementación de esta aplicación requerirá la integración de un sistema de autenticación y autorización robusto para gestionar los diferentes roles y permisos de los usuarios. Además, se necesitarán interfaces de usuario intuitivas y funcionales que permitan a los usuarios interactuar de manera efectiva con la plataforma.</p>
-
-<p>El flujo de trabajo para el “Usuario Arrendatario” implicará la gestión activa de las propiedades disponibles, la revisión y respuesta a las solicitudes de arrendamiento, así como el seguimiento de los pagos realizados y la provisión de retroalimentación sobre las experiencias de arrendamiento. Por otro lado, el “Usuario Arrendador” estará enfocado en la búsqueda y arrendamiento de propiedades, así como en la gestión de los pagos y la calificación de la experiencia general.</p>
-
-<p>En resumen, el desarrollo de esta aplicación requerirá una planificación detallada y un enfoque centrado en el usuario para garantizar una experiencia fluida y satisfactoria para todos los usuarios involucrados. La implementación exitosa de esta plataforma requerirá una cuidadosa consideración de las necesidades y expectativas tanto de los arrendatarios como de los arrendadores.</p>
-
-            </p>
-            <div class = "development">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="description-title">Desarrollo</span>
-                </button>
-                <div class = "development-info">
-                    <p class="development-text">
-                        El desarrollo de esta aplicación se llevará a cabo utilizando tecnologías web modernas, incluyendo HTML, CSS y JavaScript para el frontend, y Node.js con Express para el backend. La base de datos será gestionada mediante MongoDB, lo que permitirá una gestión eficiente de los datos de los usuarios y las propiedades.
-                    </p>
-                </div>
+    <!-- Project Overview -->
+    <section class="main-container fade-in-up">
+        <div class="text-center mb-xl">
+            <h2>Visión General</h2>
+            <p>Una plataforma integral que conecta propietarios de fincas con arrendatarios de manera segura y eficiente</p>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <i class="ph-bold ph-house card-icon"></i>
+                <h3>Propietarios</h3>
+                <p>Gestiona tus propiedades, revisa solicitudes y recibe pagos de forma segura.</p>
             </div>
-            <div class = "deployment">
-                <button class="toggle-info">
-                    <span class="arrow">&#9654;</span>
-                    <span class="description-title">Despliegue</span>
-                </button>
-                <div class = "deployment-info">
-                    <p class="deployment-text">
-                        Todas las entregas se deberán realizar en la máquina virtual entregada por la Universidad y se deberá haber realizado previamente el despliegue en un Kubernetes instalado en la misma.
-                    </p>
-                </div>
+            
+            <div class="card">
+                <i class="ph-bold ph-users card-icon"></i>
+                <h3>Arrendatarios</h3>
+                <p>Encuentra la finca perfecta, solicita arrendamiento y paga de manera confiable.</p>
             </div>
-            <div class= "score">
-                <p class = "score-loop">
-                    Fechas de entrega y calificación:
-                </p>
-                <div class = "score-info">
-                    <button class="toggle-info">
-                        <span class="arrow">&#9654;</span>
-                        <span class="score-title">Entrega #1:  JPA y controladores</span>
-                    </button>
-                    <div class="score-details">
-                        <p class ="score-text">
-                            70% Conexión a la base de datos	
-                        </p>
-                        <p class = "score-JPA">
-                            JPA:
-                        </p>
-                        <p class = "score-description">
-                            1. (60%). Mapeo del modelo al proyecto JPA en Springboot,con los respectivos entities, servicios, dtos, repositorios, dtos y contorloadores. Ud deberá tener todos los servicios en POSTMAN para poder realizar la entrega.
-                        </p>
-                        <p class = "score-description">
-                            2. (10%). Pruebas unitarias del código, incluyendo reporte de sonaqube (cobertura mínimo del 80% del código, no se aceptarhallazgos alto, medios deben tener sustentación), en la wiki ud deberá subir la documentación de los casos de pruebas en los que mínimo de información es: identificador de la prueba, título, descripción,diseñada por, ejecutada por, dependencias de las pruebas, resultados esperados, resultados reales y si cumplió o no cumplió. Notas deben ser por lo menos 5 pruebas por clase y se deben documentar si cumplio no cumplió.
-                        </p>
-                        <p class = "score-text">
-                            20% Documentación
-                        </p>
-                        <p class = "score-description">
-                            1. (10%). Modelo entidad relación, en la wiki de su grupo. Ud deberá subir el modelo y el diccionario de datos y debemos tener accesos a las actas de las sesiones.
-                        </p>
-                        <p class = "score-description">
-                            2. (10%). Debe realizar la documentación mínimo los servicios CRUD (Create, Retrieve, Update and Delete) de cada una de las clases que tiene; en la wiki debe tener los contratos funcionales de cada uno de los servicios y en debe traer en postman una consulta por cada servicio expuesto.
-                        </p>
-                        <p class = "score-text">
-                            10% Presentación
-                        </p>
-                        <p class = "score-description">
-                            1. (10%). Se debe realizar una presentación resumiendo el trabajo, deben tener la grafica de la asistencia de cada uno de ustedes a los daily, resultado el líder debe realizar la presentación, los resultados de las pruebas unitarias, los resultados de las pruebas de carga, los resultados de codigo de SONARQUBE y lo que ud vea relevante para contar. La presentación debe durar 15 mins mas 5 minutos de preguntas.
-                        </p>
-                    </div>
+            
+            <div class="card">
+                <i class="ph-bold ph-shield-check card-icon"></i>
+                <h3>Seguridad</h3>
+                <p>Sistema de verificación y pagos protegidos para ambas partes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Profiles -->
+    <section class="main-container fade-in-up">
+        <div class="text-center mb-xl">
+            <h2>Perfiles de Usuario</h2>
+            <p>Diseñamos la experiencia para dos tipos principales de usuarios</p>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <div class="text-center">
+                    <i class="ph-bold ph-user-circle card-icon"></i>
+                    <h3>Usuario Arrendatario</h3>
+                    <p class="mb-lg">Propietarios que quieren rentar sus fincas</p>
                 </div>
-                <div class = "score-info">
-                    <button class="toggle-info">
-                        <span class="arrow">&#9654;</span>
-                        <span class="score-title">Entrega 2: Conexión JPA – Angular</span>
-                    </button>
-                    <div class="score-details">
-                        <p class ="score-text">
-                            30% Componentes
-                        </p>
-                        <p class = "score-description">
-                            1. Deben mostrar componentes transversales, por lo menos 2.
-                        </p>
-                        <p class = "score-description">
-                            2. Deben mostrar componentes principales de cada una de las páginas que tienen para cumplir con todas las historias de usuarios conectadas con el backend.
-                        </p>
-                        <p class = "score-text">
-                            30% Routes
-                        </p>
-                        <p class = "score-description">
-                            1. Se debe mostrar el mockup y mostrar cada una de las páginas que estén en el mismo.
-                        </p>
-                        <p class = "score-text">
-                            30% Comunicación
-                        </p>
-                        <p class = "score-description">
-                            1. Mostrar los modelos.
-                        </p>
-                        <p class = "score-description">
-                            2. Mostrar los servicios.
-                        </p>
-                        <p class = "score-text">
-                            30% Comunicación backend
-                        </p>
-                        <p class = "score-description">
-                            1. Verificación que desde la interfaz se realicen las historias de usuario.
-                        </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="ph-bold ph-plus-circle"></i>
+                        <span>Crear y gestionar propiedades</span>
                     </div>
-                </div>
-                <div class = "score-info">
-                    <button class="toggle-info">
-                        <span class="arrow">&#9654;</span>
-                        <span class="score-title">Entrega 3: Pruebas carga, frontend y seguridad – Código limpio</span>
-                    </button>
-                    <div class="score-details">
-                        <p class ="score-text">
-                            15%	Pruebas de carga
-                        </p>
-                        <p class = "score-text">
-                            30%	JWT
-                        </p>
-                        <p class = "score-text">
-                            15%	Pruebas automatizadas de interfaz gráfica.
-                        </p>
-                        <p class = "score-text">
-                            15%	Filtros para manejo de errores.
-                        </p>
-                        <p class = "score-text">
-                            25%	Herramienta con el 100% de la funcionalidad.
-                        </p>
+                    <div class="feature-item">
+                        <i class="ph-bold ph-check-circle"></i>
+                        <span>Revisar solicitudes de arrendamiento</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-bold ph-credit-card"></i>
+                        <span>Verificar pagos recibidos</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-bold ph-star"></i>
+                        <span>Calificar experiencias</span>
                     </div>
                 </div>
             </div>
-        </main>
-        <!-- <script src="../JAVASCRIPT/DescriptionJS.js"></script> -->
-        <script src="/DescriptionJS.js"></script> 
-    </body>
+            
+            <div class="card">
+                <div class="text-center">
+                    <i class="ph-bold ph-user-plus card-icon"></i>
+                    <h3>Usuario Arrendador</h3>
+                    <p class="mb-lg">Personas que buscan arrendar fincas</p>
+                </div>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="ph-bold ph-magnifying-glass"></i>
+                        <span>Buscar fincas por ubicación</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-bold ph-handshake"></i>
+                        <span>Solicitar arrendamiento</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-bold ph-credit-card"></i>
+                        <span>Realizar pagos seguros</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="ph-bold ph-star"></i>
+                        <span>Calificar propiedades y propietarios</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="main-container fade-in-up">
+        <div class="text-center mb-xl">
+            <h2>Aspectos Técnicos</h2>
+            <p>Información sobre el desarrollo y despliegue del proyecto</p>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <i class="ph-bold ph-code card-icon"></i>
+                <h3>Desarrollo</h3>
+                <p>Utilizamos tecnologías web modernas para crear una experiencia robusta y escalable.</p>
+                <ul class="tech-list">
+                    <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+                    <li><strong>Backend:</strong> Node.js con Express</li>
+                    <li><strong>Base de datos:</strong> MongoDB</li>
+                    <li><strong>Autenticación:</strong> Sistema JWT</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <i class="ph-bold ph-cloud card-icon"></i>
+                <h3>Despliegue</h3>
+                <p>Infraestructura moderna y escalable para garantizar el mejor rendimiento.</p>
+                <ul class="tech-list">
+                    <li><strong>Plataforma:</strong> Kubernetes</li>
+                    <li><strong>Servidor:</strong> Máquina virtual universitaria</li>
+                    <li><strong>Monitoreo:</strong> Herramientas de observabilidad</li>
+                    <li><strong>Seguridad:</strong> Certificados SSL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Timeline -->
+    <section class="main-container fade-in-up">
+        <div class="text-center mb-xl">
+            <h2>Cronograma del Proyecto</h2>
+            <p>Fases de desarrollo y entregas programadas</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="ph-bold ph-1"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Entrega #1: JPA y Controladores</h3>
+                    <p class="timeline-date">70% Conexión a la base de datos</p>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <h4>JPA (60%)</h4>
+                            <p>Mapeo del modelo al proyecto JPA en Spring Boot, con entities, servicios, DTOs, repositorios y controladores. Todos los servicios disponibles en POSTMAN.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Pruebas Unitarias (10%)</h4>
+                            <p>Reporte de SonarQube con cobertura mínima del 80%, sin hallazgos altos. Documentación de casos de prueba en la wiki.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Documentación (20%)</h4>
+                            <p>Modelo entidad-relación, diccionario de datos y contratos funcionales de servicios CRUD.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Presentación (10%)</h4>
+                            <p>Presentación de 15 minutos resumiendo el trabajo, resultados de pruebas y métricas de calidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="ph-bold ph-2"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Entrega #2: Conexión JPA – Angular</h3>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <h4>Componentes (30%)</h4>
+                            <p>Componentes transversales y principales para todas las páginas conectadas con el backend.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Routes (30%)</h4>
+                            <p>Implementación de rutas y navegación según el mockup del proyecto.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Comunicación (40%)</h4>
+                            <p>Modelos, servicios y verificación de historias de usuario desde la interfaz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-marker">
+                    <i class="ph-bold ph-3"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>Entrega #3: Pruebas, Seguridad y Código Limpio</h3>
+                    <div class="timeline-details">
+                        <div class="detail-item">
+                            <h4>Pruebas de Carga (15%)</h4>
+                            <p>Evaluación de rendimiento bajo diferentes cargas de trabajo.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>JWT (30%)</h4>
+                            <p>Implementación de autenticación y autorización con JWT.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Pruebas Automatizadas (15%)</h4>
+                            <p>Pruebas de interfaz gráfica automatizadas.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Filtros de Error (15%)</h4>
+                            <p>Manejo robusto de errores y excepciones.</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Funcionalidad Completa (25%)</h4>
+                            <p>Herramienta con el 100% de la funcionalidad implementada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="main-container fade-in-up">
+        <div class="text-center">
+            <h2>¿Interesado en el proyecto?</h2>
+            <p>Conoce a nuestro equipo y contáctanos para más información</p>
+            <div class="cta-buttons">
+                <a th:href="@{/presentation}" class="btn btn-primary btn-large">
+                    <i class="ph-bold ph-users-three"></i>
+                    Conoce nuestro equipo
+                </a>
+                <a th:href="@{/contacto}" class="btn btn-secondary btn-large">
+                    <i class="ph-bold ph-chats"></i>
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="/DescriptionJS.js"></script>
+</body>
 </html>

@@ -2,76 +2,184 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contáctenos</title>
-    <link rel="stylesheet" href="/DescriptionStyles.css">
-    <link rel="stylesheet" href="/ContactStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos - Arrienda tu Finca</title>
+    <link rel="stylesheet" href="/shared-styles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-<header class="page-header">
-    <a th:href="@{/MainPage}">
-        <img src="images/Logo.png" alt="logo" class="logo-image">
-    </a>
-    <p class="Menu">
-        <a href="/presentation">Conoce a nuestro equipo!</a>
-        &nbsp;
-        <a href="/description">Descripción</a>
-    </p>
-</header>
+    <!-- Header -->
+    <header class="page-header">
+        <div class="header-container">
+            <a th:href="@{/MainPage}">
+                <img src="images/Logo.png" alt="Arrienda tu Finca" class="logo-image">
+            </a>
+            <nav class="nav-menu">
+                <a th:href="@{/description}" class="nav-link">Descripción</a>
+                <a th:href="@{/presentation}" class="nav-link">Nuestro Equipo</a>
+                <a th:href="@{/contacto}" class="nav-link active">Contáctanos</a>
+            </nav>
+        </div>
+    </header>
 
-<main class="project-description">
-    <h2>Escríbenos</h2>
+    <!-- Hero Section -->
+    <section class="hero fade-in-up">
+        <div class="main-container">
+            <h1>Contáctanos</h1>
+            <p>¿Tienes preguntas sobre nuestra plataforma? Estamos aquí para ayudarte. Envíanos un mensaje y te responderemos pronto.</p>
+        </div>
+    </section>
 
-    <div th:if="${success}" class="success" th:text="${success}"></div>
-
-    <div class="form-card">
-        <form th:action="@{/contacto}" th:object="${formulario}" method="post" id="contactForm" novalidate>
-            <div class="field">
-                <label for="nombres">Nombres *</label>
-                <input id="nombres" type="text" th:field="*{nombres}" maxlength="100" required>
-                <div class="counter"><span id="nombresCount">0</span>/100</div>
-                <div class="error" th:if="${#fields.hasErrors('nombres')}" th:errors="*{nombres}"></div>
-                <div class="error" id="nombresErr"></div>
+    <!-- Contact Form -->
+    <section class="main-container fade-in-up">
+        <div class="form-container">
+            <div class="form-title">
+                <h2>Envíanos un mensaje</h2>
+                <p>Completa el formulario y nos pondremos en contacto contigo</p>
             </div>
 
-            <div class="field">
-                <label for="apellidos">Apellidos *</label>
-                <input id="apellidos" type="text" th:field="*{apellidos}" maxlength="100" required>
-                <div class="counter"><span id="apellidosCount">0</span>/100</div>
-                <div class="error" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
-                <div class="error" id="apellidosErr"></div>
-            </div>
+            <div th:if="${success}" class="form-success" th:text="${success}"></div>
 
-            <div class="field">
-                <label for="correo">Correo (MAYÚSCULAS, sin espacios) *</label>
-                <input id="correo" type="text" th:field="*{correo}" maxlength="100" required
-                pattern="^[A-Z0-9._-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$" inputmode="email" autocomplete="email">
-                <div class="counter"><span id="correoCount">0</span>/100</div>
-                <div class="error" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
-                <div class="error" id="correoErr"></div>
-            </div>
+            <form th:action="@{/contacto}" th:object="${formulario}" method="post" id="contactForm" novalidate>
+                <div class="form-field">
+                    <label for="nombres" class="form-label">
+                        <i class="ph-bold ph-user"></i>
+                        Nombres *
+                    </label>
+                    <input 
+                        id="nombres" 
+                        type="text" 
+                        th:field="*{nombres}" 
+                        maxlength="100" 
+                        required 
+                        class="form-input"
+                        placeholder="Ingresa tus nombres">
+                    <div class="form-counter">
+                        <span id="nombresCount">0</span>/100 caracteres
+                    </div>
+                    <div class="form-error" th:if="${#fields.hasErrors('nombres')}" th:errors="*{nombres}"></div>
+                    <div class="form-error" id="nombresErr"></div>
+                </div>
 
-            <div class="field">
-                <label for="semestre">Semestre (0–16) *</label>
-                <input id="semestre" type="number" th:field="*{semestre}" min="0" max="16" required>
-                <div class="error" th:if="${#fields.hasErrors('semestre')}" th:errors="*{semestre}"></div>
-                <div class="error" id="semestreErr"></div>
-            </div>
+                <div class="form-field">
+                    <label for="apellidos" class="form-label">
+                        <i class="ph-bold ph-user"></i>
+                        Apellidos *
+                    </label>
+                    <input 
+                        id="apellidos" 
+                        type="text" 
+                        th:field="*{apellidos}" 
+                        maxlength="100" 
+                        required 
+                        class="form-input"
+                        placeholder="Ingresa tus apellidos">
+                    <div class="form-counter">
+                        <span id="apellidosCount">0</span>/100 caracteres
+                    </div>
+                    <div class="form-error" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
+                    <div class="form-error" id="apellidosErr"></div>
+                </div>
 
-            <div class="field">
-                <label for="descripcion">Descripción *</label>
-                <textarea id="descripcion" th:field="*{descripcion}" rows="4" maxlength="500" required></textarea>
-                <div class="counter"><span id="descCount">0</span>/500</div>
-                <div class="error" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
-                <div class="error" id="descripcionErr"></div>
-            </div>
+                <div class="form-field">
+                    <label for="correo" class="form-label">
+                        <i class="ph-bold ph-envelope"></i>
+                        Correo electrónico *
+                    </label>
+                    <input 
+                        id="correo" 
+                        type="email" 
+                        th:field="*{correo}" 
+                        maxlength="100" 
+                        required 
+                        class="form-input"
+                        placeholder="ejemplo@correo.com"
+                        pattern="^[A-Z0-9._-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$" 
+                        inputmode="email" 
+                        autocomplete="email">
+                    <div class="form-counter">
+                        <span id="correoCount">0</span>/100 caracteres
+                    </div>
+                    <div class="form-error" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></div>
+                    <div class="form-error" id="correoErr"></div>
+                </div>
 
-            <div class="actions">
-                <button type="submit" class="btn">Enviar</button>
-            </div>
-        </form>
-    </div>
-</main>
+                <div class="form-field">
+                    <label for="semestre" class="form-label">
+                        <i class="ph-bold ph-graduation-cap"></i>
+                        Semestre actual *
+                    </label>
+                    <input 
+                        id="semestre" 
+                        type="number" 
+                        th:field="*{semestre}" 
+                        min="0" 
+                        max="16" 
+                        required 
+                        class="form-input"
+                        placeholder="0-16">
+                    <div class="form-error" th:if="${#fields.hasErrors('semestre')}" th:errors="*{semestre}"></div>
+                    <div class="form-error" id="semestreErr"></div>
+                </div>
 
-<script src="/ContactJS.js"></script>
+                <div class="form-field">
+                    <label for="descripcion" class="form-label">
+                        <i class="ph-bold ph-chat-circle-text"></i>
+                        Mensaje *
+                    </label>
+                    <textarea 
+                        id="descripcion" 
+                        th:field="*{descripcion}" 
+                        rows="5" 
+                        maxlength="500" 
+                        required 
+                        class="form-textarea"
+                        placeholder="Cuéntanos sobre tu consulta o propuesta..."></textarea>
+                    <div class="form-counter">
+                        <span id="descCount">0</span>/500 caracteres
+                    </div>
+                    <div class="form-error" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></div>
+                    <div class="form-error" id="descripcionErr"></div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="ph-bold ph-paper-plane-right"></i>
+                        Enviar mensaje
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="main-container fade-in-up">
+        <div class="text-center">
+            <h2>Otras formas de contactarnos</h2>
+            <p>Si prefieres, también puedes encontrarnos en:</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="ph-bold ph-envelope-simple card-icon"></i>
+                    <h3>Email</h3>
+                    <p>info@arriendatufinca.com</p>
+                </div>
+                
+                <div class="card">
+                    <i class="ph-bold ph-phone card-icon"></i>
+                    <h3>Teléfono</h3>
+                    <p>+57 300 123 4567</p>
+                </div>
+                
+                <div class="card">
+                    <i class="ph-bold ph-clock card-icon"></i>
+                    <h3>Horarios</h3>
+                    <p>Lun - Vie: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/ContactJS.js"></script>
 </body>
 </html>
