@@ -1,36 +1,31 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>Presentación del equipo</title>
-    <link rel="stylesheet" th:href="@{/PresentationStyles.css}">
+    <title>Nuestro Equipo</title>
+    <link rel="stylesheet" th:href="PresentationStyles.css">
 </head>
-<body>
 <header class="page-header">
     <a th:href="@{/MainPage}">
         <img src="images/Logo.png" alt="logo" class="logo-image">
     </a>
-    <p class="menu">
-        <a th:href="@{/description}">Descripción del proyecto</a>
+    <p class="Menu">
+        <a href="/description">Descripción del proyecto</a>
         <a href="/contacto">Contáctenos</a>
     </p>
 </header>
-<main class="team-data">
-    <h1>Equipo #1</h1>
-    <h2>Integrantes</h2>
-
-    <div class="team-member" th:each="miembro : ${teamMembers}">
-        <button class="toggle-info">
-            <span class="arrow">&#9654;</span>
-            <span class="member-name" th:text="${miembro.name}">Nombre Miembro</span>
-        </button>
-        <div class="member-info">
-            <p class="member-role" th:text="${miembro.role}">Rol</p>
-            <p class="member-languages" th:text="${miembro.languages}">Lenguajes</p>
-            <p class="member-profile" th:text="${miembro.profile}">Perfil</p>
+<body>
+<div class="team-section">
+    <h2 class="section-title">Nuestro Equipo</h2>
+    
+    <div class="team-container">
+        <div class="team-card" th:each="member : ${teamMembers}">
+            <img th:src="@{${member.imageUrl}}" th:alt="'Foto de ' + ${member.name}">
+            <h3 th:text="${member.name}">Nombre Miembro</h3>
+            <p th:text="${member.role}">Rol del Miembro</p>
+            <p th:text="${member.languages}">Lenguajes</p>
+            <p th:text="${member.profile}">Perfil</p>
         </div>
     </div>
-    </main>
-
-<script th:src="@{/PresentationJS.js}"></script>
+</div>
 </body>
 </html>
