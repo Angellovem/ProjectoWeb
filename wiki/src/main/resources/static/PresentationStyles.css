@@ -27,11 +27,9 @@ body {
     padding: 1rem 1.5rem;
 }
 
-.page-header h3.header-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #2563eb;
-    margin: 0;
+.logo-image{
+    height: 70px;
+    width: 80px;
 }
 
 .page-header p.menu {

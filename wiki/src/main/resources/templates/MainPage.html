@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página principal - Wiki</title>
+    <link rel="stylesheet" href="MainPageStyles.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="main-nav">
+            <img src="images/Logo.png" alt="logo"></img>
+            <a th:href="@{/description}">Descripción  del proyecto</a>
+            <a th:href="@{/presentation}">Conoce a nuestro equipo</a>
+            <a th:href="@{/contacto}">Contáctenos</a>
+        </div>
+    </header>
+    <main class="container">
+        <div class="banner">
+            <h1>WIKI - Grupo 1</h1>
+        </div>
+        <div class="summary">
+            <p>
+                En esta Wiki encontrarás todo lo relacionado al desarrollo del proyecto Arrienda tu Finca
+            </p>
+        </div>
+        <div class="cards-container">
+            <div class="card card-description">
+                <i class="ph-bold ph-file-text"></i>
+                <a th:href="@{/description}">Descripción del proyecto</a>
+            </div>
+            
+            <div class="card card-team">
+                <i class="ph-bold ph-users-three"></i>
+                <a th:href="@{/presentation}">Conoce a nuestro equipo</a>
+            </div>
+            <div class="card card-contact">
+                <i class="ph-bold ph-chats"></i>
+                <a th:href="@{/contacto}">Contáctenos</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,3 +1,7 @@
+.project-description {
+    padding-top: 80px;
+}
+
 .form-card {
     background: white;
     border: 1px solid #e1e5e9;
@@ -79,4 +83,9 @@
 .btn:hover {
     background: #2563eb;
     color: white;
+}
+
+.logo-image{
+    height: 70px;
+    width: 80px;
 }
